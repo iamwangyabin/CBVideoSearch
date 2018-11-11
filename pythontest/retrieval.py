@@ -4,22 +4,11 @@
 # #### 3、将图像特征点映射到视觉单词上，得到图像特征
 # #### 4、计算待检索图像的最近邻图像
 
-
 import cv2
 import numpy as np
 import os
 from sklearn.cluster import KMeans
 from matplotlib import pyplot as plt
-
-
-img = cv2.imread('pythontest/IMG_2784.JPG')
-gray= cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
-
-sift = cv2.xfeatures2d.SIFT_create()
-kp = sift.detect(gray,None)
-
-img=cv2.drawKeypoints(gray,kp,img)
-
 
 #  根据图像数据文件夹路径获取所有图片路径
 dataset_path = '/home/wang/CBVideoSearch/DataSet'  # 训练样本文件夹路径
@@ -81,15 +70,6 @@ def getClusterCentures(img_paths, dataset_matrix, num_words):
 
 
 centres, des_list = getClusterCentures(img_paths=img_paths, num_words=num_words, dataset_matrix=None)
-
-
-des_list[0].shape
-
-
-
-kmeans.cluster_centers_.shape
-
-np.sum(np.sum(img_features[24]))
 
 
 # 将特征描述转换为特征向量
@@ -171,6 +151,7 @@ def retrieval_img(img_path, img_dataset, centures, img_paths):
     num_close = 9
     img = cv2.imread(img_path)
     img = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+    sift_det = cv2.xfeatures2d.SIFT_create()
     kp, des = sift_det.detectAndCompute(img, None)
     feature = des2feature(des=des, centures=centures, num_words=num_words)
     sorted_index = getNearestImg(feature, img_dataset, num_close)
@@ -180,13 +161,3 @@ def retrieval_img(img_path, img_dataset, centures, img_paths):
 # test
 img_features = get_all_features(des_list=des_list, num_words=num_words)
 
-
-path = 'C:\\Users\\Euler\\Pictures\\Saved Pictures\\3.jpg'
-
-retrieval_img(path, img_features, centres, img_paths)
-
-
-pic = plt.imread(path)
-plt.figure(figsize=(10, 20))
-plt.imshow(pic)
-plt.show()
