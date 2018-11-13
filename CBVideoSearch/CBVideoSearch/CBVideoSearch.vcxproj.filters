@@ -32,5 +32,11 @@
     <ClCompile Include="CBVideoSearch.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="keyframes.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="detector.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
