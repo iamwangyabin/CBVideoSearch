@@ -1,0 +1,7 @@
+.vscode
+.idea
+build
+images
+cmake-build-debug
+vlfeat/lib/
+data

@@ -1,0 +1,8 @@
+﻿  stdafx.cpp
+c:\users\wang\desktop\cbvideosearch-master\cbvideosearch\cbvideosearch\stdafx.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+c:\users\wang\desktop\cbvideosearch-master\cbvideosearch\cbvideosearch\stdafx.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+c:\users\wang\desktop\cbvideosearch-master\cbvideosearch\cbvideosearch\targetver.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  CBVideoSearch.cpp
+c:\users\wang\desktop\cbvideosearch-master\cbvideosearch\cbvideosearch\cbvideosearch.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  CBVideoSearch.vcxproj -> C:\Users\wang\Desktop\CBVideoSearch-master\CBVideoSearch\Debug\CBVideoSearch.exe
+  CBVideoSearch.vcxproj -> C:\Users\wang\Desktop\CBVideoSearch-master\CBVideoSearch\Debug\CBVideoSearch.pdb (Partial PDB)
