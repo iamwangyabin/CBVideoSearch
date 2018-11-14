@@ -1,0 +1,5 @@
+﻿  stdafx.cpp
+stdafx.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+c:\users\wang\documents\github\cbvideosearch\cbvideosearch\cbvideosearch\stdafx.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+c:\users\wang\documents\github\cbvideosearch\cbvideosearch\cbvideosearch\targetver.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+c:\users\wang\documents\github\cbvideosearch\cbvideosearch\cbvideosearch\stdafx.h(14): fatal error C1083: 无法打开包括文件: “opencv2/xfeatures2d.hpp”: No such file or directory
