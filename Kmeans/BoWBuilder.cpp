@@ -1,3 +1,0 @@
-#include <omp.h>
-
-void
