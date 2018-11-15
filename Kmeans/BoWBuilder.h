@@ -6,7 +6,7 @@
 #include <string>
 #include <set>
 #include <utility>
-
+#include "cppsugar/cppsugar"
 #ifdef _OPENMP
 #include <omp.h>
 #endif
@@ -80,42 +80,10 @@ public:
     ~BoWBuilder(void) {};
 
     Mat ExtractSIFTFeature(const string &imgfn) const {
-        auto img = imread(imgfn, true);    //imgfn: image file name
-        vector<KeyPoint> keypoints;
-        SiftFeatureDetector detector;
-        detector.detect(img, keypoints);
-        SiftDescriptorExtractor extractor;
-        Mat descriptors;
-        if (!keypoints.size()) {
-            return Mat();
-        }
-        extractor.compute(img, keypoints, descriptors);
-
-        // transform sift to rootSIFT, row is the number of features, cols is 128 dimension
-        for (int y = 0; y < descriptors.rows; y++) {
-            for (int x = 0; x < descriptors.cols; x++){
-                descriptors.at<float>(y, x) = sqrt(descriptors.at<float>(y, x));
-            }
-        }
-        
-        float threshold = pow(10, 12);
-        // descriptors are not normalized, do L2 normalization here.
-        for (int y = 0; y < descriptors.rows; y++) {
-            // first get the square sum
-            float sum = 0;
-            for (int x = 0; x < descriptors.cols; x++) {
-                sum += descriptors.at<float>(y, x) * descriptors.at<float>(y, x);
-            }
-            sum = sqrt(sum);
-            sum = max(sum, threshold); // see vgg
-            if (sum)
-                descriptors.row(y) /= sum;
-        }
-
-        cerr << descriptors.rows << " feature extracted." << endl;
-        return descriptors;
+        // 这个就是提取一幅图片中所有的特征，返回这个矩阵
     }
 
+    // 这个是把所有图的特征都集合起来
     // Extract sparse SIFT feature from the given images, the returned value is a vector of feature.
     // Each vector contains the descriptors of each image.
     vector<Mat> ExtractSIFTFeatures(const vector<string> &imgfns) const {
