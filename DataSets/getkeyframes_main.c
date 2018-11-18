@@ -109,7 +109,7 @@ int main(int argc, char **argv) {
         sprintf(final_out[j], "%s\\%s\\%c6d.jpg",output_filename, p ,temp);
     }
     for(int j=0; j<index; ++j){
-        sprintf(name[j], "ffmpeg -i %s\\%s.mp4 -g 25 %s",input_filename, file[j], final_out[j]);
+        sprintf(name[j], "ffmpeg -i %s\\%s.mp4 -r 1 %s",input_filename, file[j], final_out[j]);
     }
 
     #pragma omp parallel for 
