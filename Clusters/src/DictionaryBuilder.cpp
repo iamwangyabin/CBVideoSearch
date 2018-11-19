@@ -84,9 +84,6 @@ int main(int argc, char const *argv[])
 			clusters[i][j] = objects[i][j];
 			// printf("%f ",clusters[i][j]);
 		}
-	// cout<<"666"<<endl;
-	// omp_kmeans(is_perform_atomic, objects, numCoords, numObjs,
-	// 		numClusters, threshold, membership, clusters);
 	cout<<"ok"<<endl;
 	ofstream outfile ("..//DensityData.txt");
 	if(!outfile.is_open()){
@@ -100,7 +97,5 @@ int main(int argc, char const *argv[])
 		outfile<<"\n";
 	}
 	outfile.close();
-    // cout<<num<<endl;
-	// cout<<objects[1]<<endl;
     return 0;
 }

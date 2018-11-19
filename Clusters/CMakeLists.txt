@@ -12,3 +12,5 @@ add_executable(${PROJECT_NAME} ${hello_src})
 
 #g++ -c .\loadFile.cpp -o .\loadFile.o -I ..\include\
 #g++ DictionaryBuilder.cpp -o main -I ..\include\  .\loadFile.o
+
+#g++ .\BoWBuilder.cpp -o BoWmain -I ..\include\ .\loadFile.o

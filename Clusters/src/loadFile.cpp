@@ -38,8 +38,11 @@ void stringTOnum(string s, double* pdata)
 	double	fdata=0;	//小数部分
 	int n=0;			//小数部分的位数
 	int m=0;
+	bool neg_temp=false;
 	for(int i=0;i<s.length();i++)
 	{
+		if(s[i]=='-')
+			neg_temp=true;
 		while((s[i]>='0')&&(s[i]<='9')||(s[i]=='.'))		//当前字符是数据或者是小数点
 		{
 			temp=true;
@@ -66,6 +69,10 @@ void stringTOnum(string s, double* pdata)
 		if(temp)
 		{
 			pdata[m]=ndata+fdata;
+			if(neg_temp){
+				pdata[m]=(-1.0)*(ndata+fdata);
+				neg_temp = false;
+			}
 			m++;
 			ndata=0;
 			fdata=0;
