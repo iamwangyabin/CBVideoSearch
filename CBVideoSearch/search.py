@@ -37,6 +37,9 @@ def process_image(imagename,outimg):
 path=r"C:\Users\wang\Documents\GitHub\CBVideoSearch\CBVideoSearch\download.jpg"
 process_image(path,r".\\search")
 
+inp="C:\\Users\\wang\\Documents\\GitHub\\CBVideoSearch\\CBVideoSearch\\search.pgm"
+sift.exe C:\\Users\\wang\\Documents\\GitHub\\CBVideoSearch\\CBVideoSearch\\search.pgm --edge-thresh 10 --peak-thresh 5 --output=%s
+
 # k="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 500 0 0 0 0 0 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 508 0 0 0 58 0 0 0 0 0 0 0 0 0 0 0 0 0 4 0 0 0 24 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "
 # l=k.split()
 # result = list(map(int, l))
@@ -44,3 +47,5 @@ process_image(path,r".\\search")
 # tree.search_nn(result)
 # k=5
 # tree.search_knn(result, k, dist=None)
+
+
